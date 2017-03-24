@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{67EAA8FC-74E7-45E8-95FB-AEB6BD01CC99}</ProjectGuid>
+    <ProjectGuid>{474688A7-DD50-4D43-A880-FBBB798F6222}</ProjectGuid>
     <RootNamespace>Project1</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -110,12 +110,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Dropbox\datastructures\MyLinkedList.cpp" />
-    <ClCompile Include="MyThread.cpp" />
+    <ClInclude Include="..\..\MyLinkedList.h" />
+    <ClInclude Include="..\..\MyThread.h" />
+    <ClInclude Include="..\..\Source.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Dropbox\datastructures\MyLinkedList.h" />
-    <ClInclude Include="MyThread.h" />
+    <ClCompile Include="..\..\Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

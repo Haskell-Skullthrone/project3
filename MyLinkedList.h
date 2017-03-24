@@ -30,8 +30,8 @@ template<class dt>class LinkedList{
 		delete next;
 	}
 	
-	dt getData(){
-		return *data;
+	dt* getData(){
+		return data;
 	}
 	LinkedList* getNext(){
 		return next;
@@ -59,10 +59,39 @@ template<class dt>class LinkedList{
 			next->removeAt(index-1);
 		}
 	}
+	int indexOf(dt _data, int index) {
+		if (_data = *data)
+			return index;
+		else if (next->next != NULL)
+			return indexOf(_data, index + 1);
+		else
+			return -1
+	
+	}
+	int indexOf(dt _data) {
+		indexOf(_data, 0);
+	}
+	void append(LinkedList*ll) {
+		if (next == NULL)
+			next = ll;
+		else
+			next->append(ll);
+	}
+	dt getLast() {
+		if (next->next == NULL)
+			return *data;
+		else return next->getLast;
+	}
 	friend ostream& operator<<(ostream&s,const LinkedList<dt>&l){
 		s<<"data:"<<*(l.data)<<'\n';
 		if((l.next->next)!=NULL)
 			s<<"iterating:"<<*(l.next)<<'\n';
 		return s;
 	}	
+	LinkedList&operator[](int index) {
+		if (index == 0)
+			return this;
+		else
+			return this[index-1];
+	}
 }; 
