@@ -41,13 +41,13 @@ bool Memory::Allocate(int processID, int amount) {
 		elems.append(new LinkedList<Partition>(Partition(temp)));
 		return true;
 	}
-	else (elems[elems.indexOf(temp)].getData()->setEndAddress(elems[elems.indexOf(temp)].getData()->getEndAddress() + amount));
+	else (elems[elems.indexOf(processID,00)]->getData()->setEndAddress(elems[elems.indexOf(temp)]->getData()->getEndAddress() + amount));
 		return true;
 }
 bool Memory::Remove(int processID){
-	Partition temp(NULL,NULL,true,processID);
+	Partition temp(NULL, NULL, true, processID);
 	if(elems.indexOf(temp)!=-1){
-		elems.removeAt(elems.indexOf(processID));
+		elems.removeAt(elems.indexOf(temp));
 		return true;
 	}else return false;
 }

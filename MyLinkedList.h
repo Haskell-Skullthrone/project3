@@ -60,16 +60,16 @@ template<class dt>class LinkedList{
 		}
 	}
 	int indexOf(dt _data, int index) {
-		if (_data = *data)
+		if (_data == *data)
 			return index;
 		else if (next->next != NULL)
 			return indexOf(_data, index + 1);
 		else
-			return -1
+			return -1;
 	
 	}
 	int indexOf(dt _data) {
-		indexOf(_data, 0);
+		return indexOf(_data, 0);
 	}
 	void append(LinkedList*ll) {
 		if (next == NULL)
@@ -80,7 +80,7 @@ template<class dt>class LinkedList{
 	dt getLast() {
 		if (next->next == NULL)
 			return *data;
-		else return next->getLast;
+		else return next->getLast();
 	}
 	friend ostream& operator<<(ostream&s,const LinkedList<dt>&l){
 		s<<"data:"<<*(l.data)<<'\n';
@@ -88,10 +88,10 @@ template<class dt>class LinkedList{
 			s<<"iterating:"<<*(l.next)<<'\n';
 		return s;
 	}	
-	LinkedList&operator[](int index) {
+	LinkedList*operator[](int index) {
 		if (index == 0)
 			return this;
 		else
-			return this[index-1];
+			return &this[index-1];
 	}
 }; 

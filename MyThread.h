@@ -48,6 +48,10 @@ public:
 		hole = _hole;
 		processID = _processID;
 	}
+	Partition(int _process):Partition(-1,-1,true,_process){}
 	virtual ~Partition() {}
+	friend bool operator==(Partition&p1,Partition&p2){
+		return p1.getProcessId()==p2.getProcessId();
+	}
 };
 
