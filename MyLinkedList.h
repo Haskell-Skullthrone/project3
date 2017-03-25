@@ -26,8 +26,10 @@ template<class dt>class LinkedList{
 
 
 	virtual~LinkedList(){
-		delete data;
-		delete next;
+		if (next != NULL) {
+			delete data;
+			delete next;
+		}
 	}
 	
 	dt* getData(){

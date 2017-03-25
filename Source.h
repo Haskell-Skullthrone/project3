@@ -1,6 +1,7 @@
 #include <iostream>
 #include "MyLinkedList.h"
 #include "MyThread.h"
+using namespace std;
 class Memory {
 private:
 	LinkedList<Partition>elems;

@@ -1,4 +1,6 @@
 #pragma once
+#include<iostream>
+using namespace std;
 class Partition{
 protected:
 	int beginAddress;
@@ -52,6 +54,16 @@ public:
 	virtual ~Partition() {}
 	friend bool operator==(Partition&p1,Partition&p2){
 		return p1.getProcessId()==p2.getProcessId();
+	}
+	friend ostream&operator<<(ostream&s, Partition&p) {
+		if (!p.isHole()) {
+			s << "Process: " << p.getProcessId() << " Begin Address: "
+				<< p.getBeginAddress() << " End address: " << p.getEndAddress()<<'\n';
+			return s;
+		}
+	}
+	Partition&operator=(Partition&p) {
+		return Partition(p);
 	}
 };
 
