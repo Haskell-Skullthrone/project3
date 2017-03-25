@@ -44,3 +44,10 @@ bool Memory::Allocate(int processID, int amount) {
 	else (elems[elems.indexOf(temp)].getData()->setEndAddress(elems[elems.indexOf(temp)].getData()->getEndAddress() + amount));
 		return true;
 }
+bool Memory::Remove(int processID){
+	Partition temp(NULL,NULL,true,processID);
+	if(elems.indexOf(temp)!=-1){
+		elems.removeAt(elems.indexOf(processID));
+		return true;
+	}else return false;
+}
