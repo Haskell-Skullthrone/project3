@@ -1,7 +1,8 @@
 #pragma once
 #include<iostream>
 using namespace std;
-class Partition{
+//holds properties of the threads
+class Partition{	
 protected:
 	int beginAddress;
 	int endAddress;
@@ -59,8 +60,8 @@ public:
 		if (!p.isHole()) {
 			s << "Process: " << p.getProcessId() << " Begin Address: "
 				<< p.getBeginAddress() << " End address: " << p.getEndAddress()<<'\n';
-			return s;
 		}
+		return s;
 	}
 	Partition&operator=(Partition&p) {
 		return Partition(p);
